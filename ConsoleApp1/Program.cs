@@ -1,13 +1,11 @@
 ﻿using KBMGrpcService.Grpc.Organization;
-using OrgServiceClient;
-using System;
-using System.Threading.Tasks;
+using KBMGrpcService.OrganizationServiceClient;
 
 class Program
 {
     static async Task Main(string[] args)
     {
-        var client = new OrgServiceClient.OrgServiceClient("https://localhost:5001");  // Adjust the URL to match your server
+        var client = new OrgServiceClient("https://localhost:5001");  // Adjust the URL to match your server
 
         // Example: Create a new Org
         var createOrgRequest = new CreateOrgRequest

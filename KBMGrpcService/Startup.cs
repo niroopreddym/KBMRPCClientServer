@@ -1,13 +1,12 @@
-﻿using KBMGrpcService.Services;
+﻿using KBMGrpcService.Businesslayer;
+using KBMGrpcService.Businesslayer.Interfaces;
+using KBMGrpcService.Database;
+using KBMGrpcService.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace KBMGrpcService
 {
@@ -18,6 +17,10 @@ namespace KBMGrpcService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddGrpc();
+            var connectionString = "Host=localhost;Port=5432;Database=mydb;Username=myuser;Password=mypassword";
+            services.AddSingleton(new PostgresDatabase(connectionString));
+
+            services.AddTransient<IOrganizationService, OrganisationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,7 +1,7 @@
 ﻿
 using Grpc.Net.Client;
 using KBMGrpcService.Grpc.Organization;
-namespace OrgServiceClient;
+namespace KBMGrpcService.OrganizationServiceClient;
 public class OrgServiceClient
 {
     private readonly OrgService.OrgServiceClient _OrgServiceClient;

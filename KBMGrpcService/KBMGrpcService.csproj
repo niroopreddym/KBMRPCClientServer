@@ -30,4 +30,9 @@
     <Folder Include="Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\KBMGrpcService.Database\KBMGrpcService.Database.csproj" />
+    <ProjectReference Include="..\KBMGrpcService.Businesslayer\KBMGrpcService.Businesslayer.csproj" />
+  </ItemGroup>
+
 </Project>

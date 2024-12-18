@@ -4,7 +4,7 @@
     using KBMGrpcService.Grpc.User;
     using System;
     using System.Threading.Tasks;
-    namespace UserServiceClient;
+    namespace KBMGrpcService.UserServiceClient;
     public class UserServiceClient
     {
         private readonly UserService.UserServiceClient _userServiceClient;

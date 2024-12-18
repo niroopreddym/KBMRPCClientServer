@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OrganizationServiceClient\OrganizationServiceClient.csproj" />
-    <ProjectReference Include="..\UserServiceClient\UserServiceClient.csproj" />
+    <ProjectReference Include="..\KBMGrpcService.OrganizationServiceClient\KBMGrpcService.OrganizationServiceClient.csproj" />
+    <ProjectReference Include="..\KBMGrpcService.UserServiceClient\KBMGrpcService.UserServiceClient.csproj" />
   </ItemGroup>
 
 </Project>
