@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "KBMGrpcService.Grpc.Organization";
+
+package grpc.organization;
+
+message Org {
+  string id = 1;
+  string name = 2;
+  string address = 3;
+  string created_at = 4;
+  string updated_at = 5;
+}
+
+message CreateOrgRequest {
+  string name = 1;
+  string address = 2;
+}
+
+message CreateOrgResponse {
+  string organization_id = 1;
+}
+
+message GetOrgByIdRequest {
+  string id = 1;
+}
+
+message GetOrgByIdResponse {
+  string name = 1;
+  string address = 2;
+  string created_at = 3;
+  string updated_at = 4;
+}
+
+message QueryOrgsRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+  string order_by = 3;
+  string direction = 4;
+  string query_string = 5;
+}
+
+message QueryOrgsResponse {
+  int32 page = 1;
+  int32 page_size = 2;
+  int32 total = 3;
+  repeated Org organizations = 4;
+}
+
+message UpdateOrgRequest {
+  string id = 1;
+  string name = 2;
+  string address = 3;
+}
+
+message DeleteOrgRequest {
+  string id = 1;
+}
+
+service OrgService {
+  rpc CreateOrg (CreateOrgRequest) returns (CreateOrgResponse);
+  rpc GetOrgById (GetOrgByIdRequest) returns (GetOrgByIdResponse);
+  rpc QueryOrgs (QueryOrgsRequest) returns (QueryOrgsResponse);
+  rpc UpdateOrg (UpdateOrgRequest) returns (google.protobuf.Empty);
+  rpc DeleteOrg (DeleteOrgRequest) returns (google.protobuf.Empty);
+}
+
